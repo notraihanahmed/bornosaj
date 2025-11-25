@@ -68,7 +68,7 @@ ul {
 }
 
 .nav-links {
-    display: flex; /* Default for desktop */
+    display: flex;
 }
 
 .nav-links li a {
@@ -137,12 +137,10 @@ ul {
 
 .hamburger-menu.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
-    background-color: white; /* Turn white when menu is open */
 }
 
 .hamburger-menu.active .bar:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
-    background-color: white; /* Turn white when menu is open */
 }
 
 /* --- Search Box Animation --- */
