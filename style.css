@@ -37,9 +37,9 @@ ul {
     top: 0;
     width: 100%;
     /* Glass Effect */
-    background: rgba(255, 255, 255, 0.1); /* Slightly more opaque for better visibility */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.3); /* Slightly more opaque for better visibility */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
     z-index: 1000;
 }
@@ -194,8 +194,8 @@ ul {
 
 .hero-overlay-box {
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px); /* Consistent blur with navbar */
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(15px); /* Consistent blur with navbar */
+    -webkit-backdrop-filter: blur(15px);
     padding: 60px 80px;
     border-radius: 15px;
     text-align: center;
