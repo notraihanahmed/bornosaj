@@ -3,24 +3,59 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchBoxContainer = document.getElementById('search-box-container');
     const searchInput = document.querySelector('.search-input');
 
-    searchBtn.addEventListener('click', function() {
-        // Toggle the 'active' class which controls the CSS transition
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navLinksMobile = document.getElementById('nav-links-mobile');
+
+    // --- Search Box Toggle ---
+    searchBtn.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent document click from immediately closing
         searchBoxContainer.classList.toggle('active');
-        
-        // Optional: Focus the input when opened
         if (searchBoxContainer.classList.contains('active')) {
             setTimeout(() => {
                 searchInput.focus();
-            }, 100); // Slight delay for smooth transition
+            }, 100);
+        }
+        // If hamburger menu is open, close it
+        if (navLinksMobile.classList.contains('active')) {
+            navLinksMobile.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
         }
     });
 
-    // Optional: Close search box if clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = searchBtn.contains(event.target) || searchBoxContainer.contains(event.target);
-        
-        if (!isClickInsideNav && searchBoxContainer.classList.contains('active')) {
+    // --- Hamburger Menu Toggle ---
+    hamburgerBtn.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent document click from immediately closing
+        hamburgerBtn.classList.toggle('active');
+        navLinksMobile.classList.toggle('active');
+        // If search box is open, close it
+        if (searchBoxContainer.classList.contains('active')) {
             searchBoxContainer.classList.remove('active');
         }
+    });
+
+    // --- Close Menus on Outside Click ---
+    document.addEventListener('click', function(event) {
+        // Check if click is outside search components
+        const isClickInsideSearch = searchBtn.contains(event.target) || searchBoxContainer.contains(event.target);
+        if (!isClickInsideSearch && searchBoxContainer.classList.contains('active')) {
+            searchBoxContainer.classList.remove('active');
+        }
+
+        // Check if click is outside hamburger components
+        const isClickInsideHamburger = hamburgerBtn.contains(event.target) || navLinksMobile.contains(event.target);
+        if (!isClickInsideHamburger && navLinksMobile.classList.contains('active')) {
+            navLinksMobile.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
+        }
+    });
+
+    // Close mobile menu when a link is clicked
+    navLinksMobile.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinksMobile.classList.contains('active')) {
+                navLinksMobile.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+            }
+        });
     });
 });
