@@ -181,7 +181,7 @@ ul {
 .hero-section {
     height: 70vh;
     min-height: 500px;
-    background-image: url('image_2.png');
+    background-image: url('header.png');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
