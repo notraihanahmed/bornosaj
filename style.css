@@ -23,7 +23,7 @@ body {
 
 a {
     text-decoration: none;
-    color: inherit; /* Inherit color from parent for easier overriding */
+    color: inherit;
     transition: all 0.3s ease;
 }
 
@@ -37,10 +37,10 @@ ul {
     top: 0;
     width: 100%;
     /* Glass Effect */
-    background: rgba(255, 255, 255, 0.3); /* Slightly more opaque for better visibility */
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1000;
 }
 
@@ -53,11 +53,11 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    z-index: 2; /* Ensures nav content is above search box */
+    z-index: 2;
 }
 
 .logo img {
-    height: 40px; /* Adjust based on actual logo aspect ratio */
+    height: 40px;
     width: auto;
 }
 
@@ -75,7 +75,7 @@ ul {
     padding: 10px 15px;
     font-weight: 600;
     font-size: 14px;
-    color: white; /* Text color for glass effect */
+    color: var(--text-dark);
     border-radius: 4px;
 }
 
@@ -101,7 +101,7 @@ ul {
     background: none;
     border: none;
     cursor: pointer;
-    color: white; /* Text color for glass effect */
+    color: var(--text-dark);
     padding: 5px;
     transition: color 0.3s ease;
 }
@@ -120,27 +120,29 @@ ul {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001; /* Above other nav elements */
+    z-index: 1001;
 }
 
 .hamburger-menu .bar {
     width: 100%;
     height: 3px;
-    background-color: white; /* White bars for glass effect */
+    background-color: var(--text-dark);
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
 }
 
 .hamburger-menu.active .bar:nth-child(2) {
-    opacity: 0; /* Hide middle bar */
+    opacity: 0;
 }
 
 .hamburger-menu.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
+    background-color: white; /* Turn white when menu is open */
 }
 
 .hamburger-menu.active .bar:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
+    background-color: white; /* Turn white when menu is open */
 }
 
 /* --- Search Box Animation --- */
@@ -149,7 +151,7 @@ ul {
     top: var(--nav-height);
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9); /* Opaque for search box */
+    background: rgba(255, 255, 255, 0.95);
     padding: 0 5%;
     max-height: 0;
     opacity: 0;
@@ -181,8 +183,9 @@ ul {
 .hero-section {
     height: 70vh;
     min-height: 500px;
-    background: teal;
-    background-image: url('header.jpg');
+    background-color: teal; /* Fallback color */
+    /* Make sure header.jpg is in the folder */
+    background-image: url('header.jpg'); 
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -194,7 +197,7 @@ ul {
 
 .hero-overlay-box {
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px); /* Consistent blur with navbar */
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 60px 80px;
     border-radius: 15px;
@@ -287,7 +290,10 @@ ul {
 }
 
 
-/* --- Responsive Adjustments --- */
+/* =============================
+   RESPONSIVE MEDIA QUERIES
+   ============================= */
+
 @media (max-width: 992px) { /* Tablet and smaller desktop */
     .nav-links {
         gap: 10px;
@@ -308,340 +314,27 @@ ul {
     }
 }
 
-@media (max-width: 768px) { /* Mobile */
+@media (max-width: 768px) { /* Mobile Devices */
+    
+    /* Reposition nav links for mobile slide-in menu */
     .nav-links {
-        /* Mobile menu styling */
-        position: fixed;
-        top: var(--nav-height);
-        left: 0;
-:root {
-    --primary-green: #9DB835;
-    --hover-green: #8a9e2d;
-    --light-bg-gradient-end: #effde5;
-    --text-dark: #333;
-    --text-light: #666;
-    --bg-body: #f4f4f4;
-    --nav-height: 70px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Noto Sans Bengali', sans-serif;
-    background-color: var(--bg-body);
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit; /* Inherit color from parent for easier overriding */
-    transition: all 0.3s ease;
-}
-
-ul {
-    list-style: none;
-}
-
-/* --- Navbar Styling --- */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    /* Glass Effect */
-    background: rgba(255, 255, 255, 0.1); /* Slightly more opaque for better visibility */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
-    z-index: 1000;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: var(--nav-height);
-    padding: 0 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2; /* Ensures nav content is above search box */
-}
-
-.logo img {
-    height: 40px; /* Adjust based on actual logo aspect ratio */
-    width: auto;
-}
-
-.nav-links-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-links {
-    display: flex; /* Default for desktop */
-}
-
-.nav-links li a {
-    padding: 10px 15px;
-    font-weight: 600;
-    font-size: 14px;
-    color: white; /* Text color for glass effect */
-    border-radius: 4px;
-}
-
-.nav-links li a:hover {
-    background-color: var(--primary-green);
-    color: white;
-}
-
-.btn-contact {
-    background-color: var(--primary-green);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.btn-contact:hover {
-    background-color: var(--hover-green);
-}
-
-.search-icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: white; /* Text color for glass effect */
-    padding: 5px;
-    transition: color 0.3s ease;
-}
-.search-icon-btn:hover {
-    color: var(--primary-green);
-}
-
-/* --- Hamburger Menu (Hidden by default on desktop) --- */
-.hamburger-menu {
-    display: none; /* Hidden on desktop */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001; /* Above other nav elements */
-}
-
-.hamburger-menu .bar {
-    width: 100%;
-    height: 3px;
-    background-color: white; /* White bars for glass effect */
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-.hamburger-menu.active .bar:nth-child(2) {
-    opacity: 0; /* Hide middle bar */
-}
-
-.hamburger-menu.active .bar:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-}
-
-.hamburger-menu.active .bar:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
-}
-
-/* --- Search Box Animation --- */
-.search-box-container {
-    position: absolute;
-    top: var(--nav-height);
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9); /* Opaque for search box */
-    padding: 0 5%;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    z-index: 1;
-}
-
-.search-box-container.active {
-    max-height: 80px;
-    opacity: 1;
-    padding: 20px 5%;
-}
-
-.search-input {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: block;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-    font-size: 1rem;
-}
-
-/* --- Header / Hero Section Styling --- */
-.hero-section {
-    height: 70vh;
-    min-height: 500px;
-    background-image: url('image_2.png');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: var(--nav-height);
-}
-
-.hero-overlay-box {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px); /* Consistent blur with navbar */
-    -webkit-backdrop-filter: blur(8px);
-    padding: 60px 80px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.hero-overlay-box h1 {
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 30px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.btn-hero {
-    display: inline-block;
-    background-color: var(--primary-green);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-.btn-hero:hover {
-    background-color: var(--hover-green);
-    transform: translateY(-2px);
-}
-
-/* --- Feature Box Section --- */
-.feature-box-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.feature-box {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background: linear-gradient(15deg, #ffffff, var(--light-bg-gradient-end));
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.feature-image {
-    flex: 0 0 auto;
-    margin-right: 30px;
-}
-
-.feature-image img {
-    max-height: 100px;
-    width: auto;
-}
-
-.feature-text h2 {
-    font-size: 1.8rem;
-    color: var(--text-dark);
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.highlight-text {
-    display: inline-block;
-    background-color: #e0e0e0;
-    padding: 5px 15px;
-    font-weight: 700;
-    color: black;
-    font-size: 1.1rem;
-    border-radius: 4px;
-}
-
-/* --- Main Content Placeholders --- */
-.main-content {
-    max-width: 1100px;
-    margin: 0 auto 60px;
-    padding: 0 20px;
-    display: flex;
-    gap: 30px;
-}
-
-.content-card {
-    flex: 1;
-    height: 300px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 992px) { /* Tablet and smaller desktop */
-    .nav-links {
-        gap: 10px;
-    }
-    .nav-links li a {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
-    .btn-contact {
-        padding: 8px 15px;
-        font-size: 13px;
-    }
-    .hero-overlay-box {
-        padding: 40px 60px;
-    }
-    .hero-overlay-box h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) { /* Mobile */
-    .nav-links {
-        /* Mobile menu styling */
         position: fixed;
         top: var(--nav-height);
         left: 0;
         width: 100%;
         height: calc(100vh - var(--nav-height));
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.9); /* Dark overlay for mobile menu */
+        background: rgba(0, 0, 0, 0.95); /* Dark overlay */
         justify-content: center;
         align-items: center;
-        transform: translateY(-100%); /* Start off-screen */
+        transform: translateY(-100%); /* Start hidden off-screen */
         transition: transform 0.4s ease-in-out;
-        z-index: 999; /* Below navbar, above other content */
+        z-index: 998;
     }
 
+    /* Class added by JS to slide menu in */
     .nav-links.active {
-        transform: translateY(0); /* Slide in */
+        transform: translateY(0); 
     }
 
     .nav-links li {
@@ -656,7 +349,7 @@ ul {
         font-size: 1.2rem;
         color: white;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-        border-radius: 0; /* No rounded corners for full-width items */
+        border-radius: 0;
     }
 
     .nav-links li:last-child a {
@@ -667,18 +360,20 @@ ul {
         background-color: var(--primary-green);
     }
 
+    /* Show hamburger */
     .hamburger-menu {
-        display: flex; /* Show hamburger on mobile */
+        display: flex; 
     }
     
     .nav-links-container {
-        gap: 10px; /* Adjust gap when hamburger is present */
+        gap: 10px;
     }
 
     .btn-contact, .search-icon-btn {
-        margin-left: 10px; /* Space out from hamburger */
+        margin-left: 10px;
     }
 
+    /* Hero adjustments */
     .hero-overlay-box {
         padding: 30px 40px;
     }
@@ -690,6 +385,7 @@ ul {
         font-size: 13px;
     }
     
+    /* Feature box adjustments */
     .feature-box {
         flex-direction: column;
         text-align: center;
@@ -709,6 +405,7 @@ ul {
         font-size: 1rem;
     }
     
+    /* Content placeholders */
     .main-content {
         flex-direction: column;
         gap: 20px;
@@ -716,10 +413,6 @@ ul {
     }
     .content-card {
         height: 200px;
-    }
-
-    .search-input {
-        font-size: 0.9rem;
     }
 }
 
@@ -734,10 +427,7 @@ ul {
         font-size: 1.5rem;
         margin-bottom: 20px;
     }
-    .btn-hero {
-        padding: 8px 20px;
-    }
     .logo img {
         height: 35px;
     }
-    }
+        }
