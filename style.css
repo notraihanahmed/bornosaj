@@ -181,7 +181,7 @@ ul {
 
 /* --- Header / Hero Section Styling --- */
 .hero-section {
-    height: 70vh;
+    height: 100dvh;
     min-height: 500px;
     background-color: teal; /* Fallback color */
     /* Make sure header.jpg is in the folder */
