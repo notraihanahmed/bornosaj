@@ -55,7 +55,9 @@ ul {
     position: relative;
     z-index: 2;
 }
-
+.logo {
+    background-color: white;
+}
 .logo img {
     height: 40px;
     width: auto;
