@@ -57,6 +57,7 @@ ul {
 }
 .logo {
     background-color: white;
+    border: #ffffff;
 }
 .logo img {
     height: 40px;
