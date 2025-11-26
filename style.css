@@ -184,7 +184,6 @@ ul {
     height: 100dvh;
     min-height: 500px;
     background-color: teal; /* Fallback color */
-    /* Make sure header.jpg is in the folder */
     background-image: url('header.jpg'); 
     background-attachment: fixed;
     background-position: center;
@@ -193,7 +192,7 @@ ul {
     justify-content: center;
     align-items: center;
     margin-top: var(--nav-height);
-    box-shadow: inset 4rem 7rem 4rem 7rem rgba(0, 0, 0, .6);
+    box-shadow: inset 2rem rgba(0, 0, 0, .6);
 }
 
 .hero-overlay-box {
@@ -203,7 +202,7 @@ ul {
     padding: 60px 80px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    box-shadow: 4rem rgba(0, 0, 0, 0.7);
     border: 3px solid rgba(255, 255, 255, .7);
 }
 
