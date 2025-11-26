@@ -55,10 +55,7 @@ ul {
     position: relative;
     z-index: 2;
 }
-.logo {
-    background-color: white;
-    border: #ffffff;
-}
+
 .logo img {
     height: 40px;
     width: auto;
