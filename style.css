@@ -186,13 +186,13 @@ ul {
     background-color: teal; /* Fallback color */
     background-image: url('header.jpg'); 
     background-attachment: fixed;
-    background-position: center;
+    background-position: top;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: var(--nav-height);
-    box-shadow: inset 2rem rgba(0, 0, 0, .6);
+    box-shadow: inset 6rem 8rem rgba(0, 0, 0, .6);
 }
 
 .hero-overlay-box {
@@ -202,10 +202,8 @@ ul {
     padding: 60px 80px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 10rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 32px 8px rgba(0, 0, 0, 0.6);
     border: 3px solid rgba(255, 255, 255, .7);
-    filter: grayscale(.8);
-    -webkit-filter: grayscale(.8);
 }
 
 .hero-overlay-box h1 {
